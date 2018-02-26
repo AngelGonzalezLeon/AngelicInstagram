@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="AngelicInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="AngelicInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,27 +55,113 @@
                     <connections>
                         <outlet property="passwordField" destination="ruF-5d-8mF" id="JH2-Jy-zkO"/>
                         <outlet property="usernameField" destination="YDW-4V-QGf" id="daJ-9i-gv4"/>
-                        <segue destination="9jZ-ub-eCi" kind="presentation" identifier="loginSegue" id="DAX-iz-YH9"/>
+                        <segue destination="ZAc-LZ-JM9" kind="presentation" identifier="loginSegue" id="DAX-iz-YH9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="127" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Feed-->
         <scene sceneID="aPB-7g-FbX">
             <objects>
-                <viewController id="9jZ-ub-eCi" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9jZ-ub-eCi" customClass="HomePageViewController" customModule="AngelicInstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K5X-Ct-u4d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NLC-hd-MMm"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Home Feed" id="Q4Z-CC-PLm">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="IDC-jw-YEZ">
+                            <connections>
+                                <action selector="logoutButton:" destination="9jZ-ub-eCi" id="AJg-vY-i1k"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="67v-9e-ylc">
+                            <connections>
+                                <action selector="composeButton:" destination="9jZ-ub-eCi" id="JuQ-fk-oDb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="gBK-VK-4b2" kind="presentation" identifier="composerSegue" id="dkC-Sz-203"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7B-Dz-woR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="108"/>
+            <point key="canvasLocation" x="1663" y="107"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="e3b-8y-Qhc">
+            <objects>
+                <viewController id="zjZ-1r-jCU" customClass="ComposeViewController" customModule="AngelicInstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TTJ-cU-fmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFl-0E-4Eq">
+                                <rect key="frame" x="41" y="97" width="158" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onClickImageView:" destination="zjZ-1r-jCU" eventType="touchUpInside" id="7bE-S2-WPR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lsm-oD-5cr">
+                                <rect key="frame" x="41" y="97" width="158" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tpB-ho-z6X"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ndk-we-68m">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="sFE-wn-4YP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="fw7-7y-cfH"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbM-Xb-jhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3480.8000000000002" y="114.69265367316342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AQf-yG-ec8">
+            <objects>
+                <navigationController storyboardIdentifier="HomePageViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZAc-LZ-JM9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Jf-6Q-Uxw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9jZ-ub-eCi" kind="relationship" relationship="rootViewController" id="1qg-6b-8tb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4R-lY-wav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.60000000000002" y="107.94602698650675"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mzL-jw-LgF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gBK-VK-4b2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PYi-oW-D5X">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zjZ-1r-jCU" kind="relationship" relationship="rootViewController" id="ROX-hQ-c2O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVD-ie-0t5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
