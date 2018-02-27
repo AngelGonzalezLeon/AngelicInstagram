@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 
-class PostCell: PFTableViewCell {
+class PostCell: UITableViewCell {
 
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!

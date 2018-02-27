@@ -96,16 +96,16 @@ class HomePageViewController: UIViewController, UITableViewDataSource,UITableVie
     @IBAction func composeButton(_ sender: Any) {
         self.performSegue(withIdentifier: "composerSegue", sender: nil)
     }
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let cell = sender as? UITableViewCell {
             if let indexPath = homeTableView.indexPath(for: cell) {
                 let post = posts[indexPath.row]
-                let detailViewController = segue.destination as! DetailViewController
+                let detailViewController = segue.destination as! detailViewController
                 detailViewController.post = post
             }
         }
     }
- */
+ 
     
 }
