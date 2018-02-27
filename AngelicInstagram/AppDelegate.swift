@@ -8,14 +8,16 @@
 
 import UIKit
 import Parse
+import ParseUI
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "AngelicInstagram"
@@ -27,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Logout notification received")
             self.logOut()
         }
+        NotificationCenter.default.addObserver(forName: Notification.Name("didCancel"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Cancel notification received")
+            self.cancel()
+        }
+        
         // check if user is logged in.
         if PFUser.current() != nil {
             print("trying to relog user")
@@ -53,7 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
     }
-
+    func cancel() {
+        // Load and show the home view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationViewController = storyboard.instantiateViewController(withIdentifier: "HomePageViewController")
+        self.window?.rootViewController = navigationViewController
+        print("Successful cancel")
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

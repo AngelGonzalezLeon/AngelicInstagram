@@ -7,7 +7,8 @@ target 'AngelicInstagram' do
 
   # Pods for AngelicInstagram
     pod 'Parse'
-
+    pod 'ParseUI'
+    pod 'Toucan'
   target 'AngelicInstagramTests' do
     inherit! :search_paths
     # Pods for testing

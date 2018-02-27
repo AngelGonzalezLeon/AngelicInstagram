@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00EA336F69E7F8B9D99EB2B4 /* Pods_AngelicInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C192111F2C1F336A54849F /* Pods_AngelicInstagram.framework */; };
+		4A37702E2044C592007E6194 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37702D2044C592007E6194 /* PostCell.swift */; };
+		4A3770302044C9A0007E6194 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A37702F2044C9A0007E6194 /* Post.swift */; };
 		4A3A283C2042A86200AA2756 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3A283B2042A86200AA2756 /* ComposeViewController.swift */; };
+		4A3EE2AB2045006F0045C9DC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3EE2AA2045006E0045C9DC /* detailViewController.swift */; };
 		4AAB114720414CC50014373B /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAB114620414CC50014373B /* HomePageViewController.swift */; };
 		4ABB6D5C203FB7C800AC26C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB6D5B203FB7C800AC26C5 /* AppDelegate.swift */; };
 		4ABB6D61203FB7CA00AC26C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB6D5F203FB7CA00AC26C5 /* Main.storyboard */; };
@@ -42,7 +45,10 @@
 		09D5BBE38BC4E5118CC750EC /* Pods_AngelicInstagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AngelicInstagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C192111F2C1F336A54849F /* Pods_AngelicInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AngelicInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231C224D12B40046983C9C5D /* Pods-AngelicInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AngelicInstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-AngelicInstagram/Pods-AngelicInstagram.release.xcconfig"; sourceTree = "<group>"; };
+		4A37702D2044C592007E6194 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		4A37702F2044C9A0007E6194 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4A3A283B2042A86200AA2756 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		4A3EE2AA2045006E0045C9DC /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		4AAB114620414CC50014373B /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		4ABB6D58203FB7C800AC26C5 /* AngelicInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngelicInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ABB6D5B203FB7C800AC26C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				4AAB114620414CC50014373B /* HomePageViewController.swift */,
 				4ABB6D89203FBDBA00AC26C5 /* LoginViewController.swift */,
 				4A3A283B2042A86200AA2756 /* ComposeViewController.swift */,
+				4A3EE2AA2045006E0045C9DC /* detailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +154,8 @@
 				4ABB6D62203FB7CA00AC26C5 /* Assets.xcassets */,
 				4ABB6D64203FB7CA00AC26C5 /* LaunchScreen.storyboard */,
 				4ABB6D67203FB7CA00AC26C5 /* Info.plist */,
+				4A37702D2044C592007E6194 /* PostCell.swift */,
+				4A37702F2044C9A0007E6194 /* Post.swift */,
 			);
 			path = AngelicInstagram;
 			sourceTree = "<group>";
@@ -405,11 +414,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AngelicInstagram/Pods-AngelicInstagram-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,9 +487,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A37702E2044C592007E6194 /* PostCell.swift in Sources */,
 				4ABB6D8A203FBDBA00AC26C5 /* LoginViewController.swift in Sources */,
 				4ABB6D5C203FB7C800AC26C5 /* AppDelegate.swift in Sources */,
+				4A3770302044C9A0007E6194 /* Post.swift in Sources */,
 				4AAB114720414CC50014373B /* HomePageViewController.swift in Sources */,
+				4A3EE2AB2045006F0045C9DC /* detailViewController.swift in Sources */,
 				4A3A283C2042A86200AA2756 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
